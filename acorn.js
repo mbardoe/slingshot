@@ -5,13 +5,14 @@ class Acorn{
 		this.velocity=createVector(-2,-4);
 		this.acceleration=createVector(0,0);
 		this.mass=10;
+		this.radius=10;
 
 	}
 
 	show(){
 		fill(200);
 		ellipseMode(CENTER);
-		ellipse(this.position.x, this.position.y, 20, 20);
+		ellipse(this.position.x, this.position.y, 2*this.radius, 2*this.radius);
 	}
 
 	update(){
@@ -26,16 +27,16 @@ class Acorn{
 	}
 
 	bounce(){
-		if (this.position.y>=height){
-			this.position.y=height;
+		if (this.position.y+this.radius>=height){
+			this.position.y=height-this.radius;
 			this.velocity.y*=-1;
 		}
-		if (this.position.x>=width){
-			this.position.x=width;
+		if (this.position.x+this.radius>=width){
+			this.position.x=width-this.radius;
 			this.velocity.x*=-1;
 		}
-		if (this.position.x<=0){
-			this.position.x=0;
+		if (this.position.x-this.radius<=0){
+			this.position.x=this.radius;
 			this.velocity.x*=-1;
 		}
 	}
