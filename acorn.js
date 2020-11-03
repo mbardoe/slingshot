@@ -5,7 +5,7 @@ class Acorn{
 		this.velocity=createVector(-2,-4);
 		this.acceleration=createVector(0,0);
 		this.mass=10;
-		this.radius=10;
+		this.radius=3;
 
 	}
 
